@@ -1,113 +1,183 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import { Header } from "@/components/header";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div
+      id="#"
+      className="relative flex flex-col flex-1 justify-between h-screen"
+    >
+      <Header />
+      <div className="px-12 lg:px-32 mt-24">
+        <BannerSection />
+        <div className="flex justify-center mt-24">
+          <Image
+            alt="icone seta para baixo"
+            src="/arrow_down_icon.svg"
+            width={29}
+            height={29}
+          />
         </div>
+        <div id="nossa-historia" className="py-14">
+          <div className="flex flex-col gap-24 lg:flex-row">
+            <img alt="icone seta para baixo" src="/image_placeholder.png" />
+            <div>
+              <h3 className="text-4xl montserrat">KJ Production</h3>
+              <p className="montserrat font-normal mt-8">
+                Somos especialistas em marketing digital dedicados a destacar
+                médicos no cenário online. Nosso foco é criar conteúdo autêntico
+                e envolvente para fortalecer a presença digital de cada médico,
+                conectando-os de maneira significativa com seus seguidores e
+                pacientes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="py-14">
+          <div className="flex flex-col-reverse gap-24 lg:flex-row">
+            <div>
+              <h3 className="text-4xl montserrat">O Que Fazemos?</h3>
+              <p className="montserrat font-normal mt-8">
+                Oferecemos estratégias de engajamento e gestão completa da
+                presença digital para impulsionar o alcance e a reputação online
+                dos nossos clientes médicos.
+              </p>
+            </div>
+            <img alt="icone seta para baixo" src="/image_placeholder.png" />
+          </div>
+        </div>
+        <GallerySection />
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <TestimonySection />
+      <ContactSection />
+      <Footer />
+    </div>
   );
 }
+
+const ContactSection = () => {
+  return (
+    <div id="contato" className="px-12 py-12 lg:px-32">
+      <h3 className="montserrat text-4xl">Fale conosco</h3>
+      <p className="montserrat mt-8">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, corporis
+        nemo, nostrum cumque velit culpa ipsam in illo consequuntur sequi est
+        similique a minus libero eaque nesciunt, explicabo magni odio.
+      </p>
+      <div className="flex items-center justify-between mt-20">
+        <h3 className="montserrat font-bold text-3xl">
+          Clique para entrar em contato
+        </h3>
+        <button className="shrink-0">
+          <Image src="/wpp_contact_icon.svg" width="50" height="50" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const TestimonySection = () => {
+  return (
+    <div id="depoimentos" className="px-12 py-14 lg:px-32 bg-cod-gray-600">
+      <div>
+        <h3 className="montserrat text-4xl">Depoimentos</h3>
+        <p className="montserrat mt-8">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam,
+          fugiat quaerat blanditiis enim, architecto tempore placeat quae
+          expedita voluptate hic reiciendis mollitia sit necessitatibus
+          laudantium officiis sunt eius perspiciatis.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const GallerySection = () => {
+  return (
+    <div id="galeria" className="py-14">
+      <h3 className="montserrat text-4xl">Galeria</h3>
+      <div className="flex flex-col gap-4 mt-24 lg:flex-row">
+        <img
+          className="flex-1"
+          alt="icone seta para baixo"
+          src="/image_placeholder.png"
+        />
+        <img
+          className="flex-1"
+          alt="icone seta para baixo"
+          src="/image_placeholder.png"
+        />
+      </div>
+    </div>
+  );
+};
+
+const BannerSection = () => {
+  return (
+    <div className="lg:relative mt-20 ">
+      <img className="w-full" alt="Banner home" src="/banner_home.png" />
+      <p className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+      </p>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="px-12 py-5 bg-cod-gray lg:px-32">
+      <nav className="flex flex-col lg:flex-row lg:items-center">
+        <img
+          className="w-28 h-7 lg:w-60 lg:h-14"
+          src="/logo.svg"
+          alt="Vercel Logo"
+          priority
+        />
+        <div className="flex flex-1  gap-5 items-center list-none mt-4 lg:mt-0 lg:place-content-end">
+          <li className="shrink-0">
+            <img
+              className="w-4 h-4 lg:w-6 lg:h-6"
+              src="/facebook_icon.svg"
+              alt="Vercel Logo"
+              priority
+            />
+          </li>
+          <li className="shrink-0">
+            <img
+              className="w-4 h-4 lg:w-6 lg:h-6"
+              src="/twitter_icon.svg"
+              alt="Vercel Logo"
+              priority
+            />
+          </li>
+          <li className="shrink-0">
+            <img
+              className="w-4 h-4 lg:w-6 lg:h-6"
+              src="/insta_icon.svg"
+              alt="Vercel Logo"
+              priority
+            />
+          </li>
+          <li className="shrink-0">
+            <img
+              className="w-4 h-4 lg:w-6 lg:h-6"
+              src="/youtube_icon.svg"
+              alt="Vercel Logo"
+              priority
+            />
+          </li>
+          <li className="shrink-0">
+            <img
+              className="w-4 h-4 lg:w-6 lg:h-6"
+              src="/wpp_icon.svg"
+              alt="Vercel Logo"
+              priority
+            />
+          </li>
+        </div>
+      </nav>
+    </footer>
+  );
+};
