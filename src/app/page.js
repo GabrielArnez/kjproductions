@@ -124,8 +124,8 @@ const ContactSection = () => {
           Clique para entrar em contato
         </motion.div>
         <motion.button
-          initial={{ translateX: 90, opacity: 0 }}
-          whileInView={{ translateX: 0, opacity: 1 }}
+          initial={{ translateY: 90, opacity: 0 }}
+          whileInView={{ translateY: 0, opacity: 1 }}
           viewport={{ once: true }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2 }}
