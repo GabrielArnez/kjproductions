@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Header } from "@/components/header";
+import { Gallery } from "@/components/Gallery";
+import { Header } from "@/components/Header";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -12,18 +14,39 @@ export default function Home() {
       <Header />
       <div className="px-12 lg:px-32 mt-24">
         <BannerSection />
-        <div className="flex justify-center mt-24">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3 }}
+          className="flex justify-center mt-24"
+        >
           <Image
             alt="icone seta para baixo"
             src="/arrow_down_icon.svg"
             width={29}
             height={29}
           />
-        </div>
+        </motion.div>
         <div id="nossa-historia" className="py-14">
           <div className="flex flex-col gap-24 lg:flex-row">
-            <img alt="icone seta para baixo" src="/image_placeholder.png" />
-            <div>
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
+              alt="icone seta para baixo"
+              src="/image_placeholder.png"
+            />
+            <motion.div
+              initial={{ translateX: -90, opacity: 0 }}
+              whileInView={{ translateX: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              exit={{ translateX: 0 }}
+              transition={{ duration: 2 }}
+            >
               <h3 className="text-4xl montserrat">KJ Production</h3>
               <p className="montserrat font-normal mt-8">
                 Somos especialistas em marketing digital dedicados a destacar
@@ -32,23 +55,37 @@ export default function Home() {
                 conectando-os de maneira significativa com seus seguidores e
                 pacientes.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="py-14">
           <div className="flex flex-col-reverse gap-24 lg:flex-row">
-            <div>
+            <motion.div
+              initial={{ translateX: -90, opacity: 0 }}
+              whileInView={{ translateX: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              exit={{ translateX: 0 }}
+              transition={{ duration: 2 }}
+            >
               <h3 className="text-4xl montserrat">O Que Fazemos?</h3>
               <p className="montserrat font-normal mt-8">
                 Oferecemos estratégias de engajamento e gestão completa da
                 presença digital para impulsionar o alcance e a reputação online
                 dos nossos clientes médicos.
               </p>
-            </div>
-            <img alt="icone seta para baixo" src="/image_placeholder.png" />
+            </motion.div>
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
+              alt="icone seta para baixo"
+              src="/image_placeholder.png"
+            />
           </div>
         </div>
-        <GallerySection />
+        {/* <Gallery /> */}
       </div>
       <TestimonySection />
       <ContactSection />
@@ -60,19 +97,42 @@ export default function Home() {
 const ContactSection = () => {
   return (
     <div id="contato" className="px-12 py-12 lg:px-32">
-      <h3 className="montserrat text-4xl">Fale conosco</h3>
-      <p className="montserrat mt-8">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, corporis
-        nemo, nostrum cumque velit culpa ipsam in illo consequuntur sequi est
-        similique a minus libero eaque nesciunt, explicabo magni odio.
-      </p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <h3 className="montserrat text-4xl">Fale conosco</h3>
+        <p className="montserrat mt-8">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+          corporis nemo, nostrum cumque velit culpa ipsam in illo consequuntur
+          sequi est similique a minus libero eaque nesciunt, explicabo magni
+          odio.
+        </p>
+      </motion.div>
       <div className="flex items-center justify-between mt-20">
-        <h3 className="montserrat font-bold text-3xl">
+        <motion.div
+          initial={{ translateX: -90, opacity: 0 }}
+          whileInView={{ translateX: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+          className="montserrat font-bold text-3xl"
+        >
           Clique para entrar em contato
-        </h3>
-        <button className="shrink-0">
+        </motion.div>
+        <motion.button
+          initial={{ translateX: 90, opacity: 0 }}
+          whileInView={{ translateX: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+          className="shrink-0"
+        >
           <Image src="/wpp_contact_icon.svg" width="50" height="50" />
-        </button>
+        </motion.button>
       </div>
     </div>
   );
@@ -81,7 +141,13 @@ const ContactSection = () => {
 const TestimonySection = () => {
   return (
     <div id="depoimentos" className="px-12 py-14 lg:px-32 bg-cod-gray-600">
-      <div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
         <h3 className="montserrat text-4xl">Depoimentos</h3>
         <p className="montserrat mt-8">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam,
@@ -89,39 +155,31 @@ const TestimonySection = () => {
           expedita voluptate hic reiciendis mollitia sit necessitatibus
           laudantium officiis sunt eius perspiciatis.
         </p>
-      </div>
-    </div>
-  );
-};
-
-const GallerySection = () => {
-  return (
-    <div id="galeria" className="py-14">
-      <h3 className="montserrat text-4xl">Galeria</h3>
-      <div className="flex flex-col gap-4 mt-24 lg:flex-row">
-        <img
-          className="flex-1"
-          alt="icone seta para baixo"
-          src="/image_placeholder.png"
-        />
-        <img
-          className="flex-1"
-          alt="icone seta para baixo"
-          src="/image_placeholder.png"
-        />
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 const BannerSection = () => {
   return (
-    <div className="lg:relative mt-20 ">
+    <motion.div
+      viewport={{ once: true }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="lg:relative mt-20 "
+    >
       <img className="w-full" alt="Banner home" src="/banner_home.png" />
-      <p className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0">
+      <motion.p
+        viewport={{ once: true }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 };
 

@@ -72,18 +72,20 @@ export function Header() {
           )
         )}
       >
-        <X
-          className="absolute left-[70%] top-8"
-          onClick={() => setShowResponsiveMenu(false)}
-        />
-        <div className="bg-cod-gray w-2/3 h-full px-6 py-8 z-20">
-          <img
-            className="w-28 h-7 lg:w-60 lg:h-14"
-            src="/logo.svg"
-            alt="Vercel Logo"
-            priority
-          />
-          <div>
+        <div className="bg-black w-2/3 h-full z-20">
+          <div className="flex  items-center  justify-between bg-cod-gray px-6 py-8">
+            <img
+              className="w-28 h-7 lg:w-60 lg:h-14"
+              src="/logo.svg"
+              alt="Vercel Logo"
+              priority
+            />
+            <X
+              className="  text-texas-rose"
+              onClick={() => setShowResponsiveMenu(false)}
+            />
+          </div>
+          <div className="px-6 mt-4">
             <ul className="list-none mt-8 space-y-2">
               {menuItens?.map((menuItem) => (
                 <li key={menuItem?.name}>
