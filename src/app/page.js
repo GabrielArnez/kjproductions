@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Gallery } from "@/components/Gallery";
 import { VideoModal } from "@/components/VideoModal";
+import { Suspense } from "react";
 
 export default function Home() {
   const OPTIONS = { slidesToScroll: 2 };
@@ -99,7 +100,9 @@ export default function Home() {
       <TestimonySection />
       <ContactSection />
       <Footer />
-      <VideoModal />
+      <Suspense>
+        <VideoModal />
+      </Suspense>
     </div>
   );
 }
