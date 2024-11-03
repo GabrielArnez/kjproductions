@@ -103,7 +103,6 @@ export default function Home() {
     </div>
   );
 }
-
 const BannerSection = () => {
   return (
     <motion.div
