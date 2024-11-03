@@ -103,6 +103,7 @@ export default function Home() {
     </div>
   );
 }
+
 const BannerSection = () => {
   return (
     <motion.div
@@ -125,6 +126,7 @@ const BannerSection = () => {
     </motion.div>
   );
 };
+
 const TestimonySection = () => {
   return (
     <div id="depoimentos" className="px-12 py-14 lg:px-32 bg-cod-gray-600">
@@ -150,6 +152,7 @@ const TestimonySection = () => {
     </div>
   );
 };
+
 const ContactSection = () => {
   return (
     <div id="contato" className="px-12 py-12 lg:px-32 bg-cod-gray-600">
