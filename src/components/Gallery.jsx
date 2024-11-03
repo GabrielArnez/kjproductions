@@ -15,52 +15,52 @@ export function Gallery() {
   const gallery = [
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_1.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_2.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_3.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_4.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_5.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_6.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_7.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_1.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_8.mp4",
     },
     {
       type: "image",
-      poster: "/gallery.webp",
+      poster: "/image_placeholder.png",
       source: "/movies/movie_9.mp4",
     },
   ];
