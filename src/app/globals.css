@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.embla {
+  @apply max-w-[92rem] m-auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 50%;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -61,6 +68,6 @@ body {
   font-family: var(--font-inter);
 }
 
-.test {
+.transtion-4 {
   transition: width 0.4s;
 }

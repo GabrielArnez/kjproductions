@@ -65,7 +65,7 @@ export function Header() {
       <div
         className={twMerge(
           cn(
-            "bg-cod-gray/80 absolute w-0 overflow-hidden inset-0 h-screen test",
+            "bg-cod-gray/80 absolute w-0 overflow-hidden inset-0 h-screen transtion-4",
             {
               "w-full": showResponsiveMenu,
             }

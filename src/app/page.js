@@ -1,18 +1,25 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-import { Gallery } from "@/components/Gallery";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { Gallery } from "@/components/Gallery";
+import { VideoModal } from "@/components/VideoModal";
+
 export default function Home() {
+  const OPTIONS = { slidesToScroll: 2 };
+  const SLIDE_COUNT = 5;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+
   return (
     <div
       id="#"
-      className="relative flex flex-col flex-1 justify-between h-screen"
+      className="relative flex flex-col flex-1 justify-between h-screen bg-cod-gray-600"
     >
       <Header />
-      <div className="px-12 lg:px-32 mt-24">
+      <div className="px-12 lg:px-32 mt-24 bg-cod-gray-600">
         <BannerSection />
         <motion.div
           initial={{ opacity: 0 }}
@@ -58,7 +65,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="py-14">
+        <div className="py-14 bg-cod-gray-600">
           <div className="flex flex-col-reverse gap-24 lg:flex-row">
             <motion.div
               initial={{ translateX: -90, opacity: 0 }}
@@ -85,18 +92,70 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* <Gallery /> */}
+        <div id="galeria">
+          <Gallery />
+        </div>
       </div>
       <TestimonySection />
       <ContactSection />
       <Footer />
+      <VideoModal />
     </div>
   );
 }
 
+const BannerSection = () => {
+  return (
+    <motion.div
+      viewport={{ once: true }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="lg:relative mt-20 "
+    >
+      <img className="w-full" alt="Banner home" src="/banner_home.png" />
+      <motion.p
+        viewport={{ once: true }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+      </motion.p>
+    </motion.div>
+  );
+};
+
+const TestimonySection = () => {
+  return (
+    <div id="depoimentos" className="px-12 py-14 lg:px-32 bg-cod-gray-600">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <h3 className="montserrat text-4xl">Depoimentos</h3>
+
+        <p className="montserrat mt-8">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam,
+          fugiat quaerat blanditiis enim, architecto tempore placeat quae
+          expedita voluptate hic reiciendis mollitia sit necessitatibus
+          laudantium officiis sunt eius perspiciatis.
+        </p>
+        <div className="mt-14">
+          <TestimonialsSection />
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const ContactSection = () => {
   return (
-    <div id="contato" className="px-12 py-12 lg:px-32">
+    <div id="contato" className="px-12 py-12 lg:px-32 bg-cod-gray-600">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -135,107 +194,5 @@ const ContactSection = () => {
         </motion.button>
       </div>
     </div>
-  );
-};
-
-const TestimonySection = () => {
-  return (
-    <div id="depoimentos" className="px-12 py-14 lg:px-32 bg-cod-gray-600">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
-      >
-        <h3 className="montserrat text-4xl">Depoimentos</h3>
-        <p className="montserrat mt-8">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam,
-          fugiat quaerat blanditiis enim, architecto tempore placeat quae
-          expedita voluptate hic reiciendis mollitia sit necessitatibus
-          laudantium officiis sunt eius perspiciatis.
-        </p>
-      </motion.div>
-    </div>
-  );
-};
-
-const BannerSection = () => {
-  return (
-    <motion.div
-      viewport={{ once: true }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="lg:relative mt-20 "
-    >
-      <img className="w-full" alt="Banner home" src="/banner_home.png" />
-      <motion.p
-        viewport={{ once: true }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 0.5 }}
-        className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-      </motion.p>
-    </motion.div>
-  );
-};
-
-const Footer = () => {
-  return (
-    <footer className="px-12 py-5 bg-cod-gray lg:px-32">
-      <nav className="flex flex-col lg:flex-row lg:items-center">
-        <img
-          className="w-28 h-7 lg:w-60 lg:h-14"
-          src="/logo.svg"
-          alt="Vercel Logo"
-          priority
-        />
-        <div className="flex flex-1  gap-5 items-center list-none mt-4 lg:mt-0 lg:place-content-end">
-          <li className="shrink-0">
-            <img
-              className="w-4 h-4 lg:w-6 lg:h-6"
-              src="/facebook_icon.svg"
-              alt="Vercel Logo"
-              priority
-            />
-          </li>
-          <li className="shrink-0">
-            <img
-              className="w-4 h-4 lg:w-6 lg:h-6"
-              src="/twitter_icon.svg"
-              alt="Vercel Logo"
-              priority
-            />
-          </li>
-          <li className="shrink-0">
-            <img
-              className="w-4 h-4 lg:w-6 lg:h-6"
-              src="/insta_icon.svg"
-              alt="Vercel Logo"
-              priority
-            />
-          </li>
-          <li className="shrink-0">
-            <img
-              className="w-4 h-4 lg:w-6 lg:h-6"
-              src="/youtube_icon.svg"
-              alt="Vercel Logo"
-              priority
-            />
-          </li>
-          <li className="shrink-0">
-            <img
-              className="w-4 h-4 lg:w-6 lg:h-6"
-              src="/wpp_icon.svg"
-              alt="Vercel Logo"
-              priority
-            />
-          </li>
-        </div>
-      </nav>
-    </footer>
   );
 };

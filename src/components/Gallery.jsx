@@ -1,87 +1,112 @@
-import "react-multi-carousel/lib/styles.css";
-import Carousel from "react-multi-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import Image from "next/image";
+import { VideoModal } from "./VideoModal";
+import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export function Gallery() {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+  const [emblaRef, emblaApi] = useEmblaCarousel({ slidesToScroll: "auto" });
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
+
+  const router = useRouter();
+
+  const gallery = [
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_1.mp4",
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_2.mp4",
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_3.mp4",
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_4.mp4",
     },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_5.mp4",
+    },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_6.mp4",
+    },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_7.mp4",
+    },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_1.mp4",
+    },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_8.mp4",
+    },
+    {
+      type: "image",
+      poster: "/gallery.webp",
+      source: "/movies/movie_9.mp4",
+    },
+  ];
+
+  const handleSetSearchParams = (video) => {
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("show", video?.source);
+    searchParams.set("poster", video?.poster);
+    router.push(`?${searchParams.toString()}#galeria`);
   };
 
   return (
-    <Carousel
-      responsive={responsive}
-      swipeable={false}
-      draggable={false}
-      showDots={true}
-      // ssr={true} // means to render carousel on server-side.
-      // removeArrowOnDeviceType={["tablet", "mobile"]}
-      infinite={true}
-      // itemClass="carousel-item-padding-40-px"
-      autoPlay={true}
-      autoPlaySpeed={3000}
-      keyBoardControl={true}
-      customTransition="all .5"
-      transitionDuration={500}
-      containerClass="carousel-container"
-      dotListClass="custom-dot-list-style"
-    >
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="w-48 object-cover"
-        />
-      </div>
-    </Carousel>
+    <div className="py-14 bg-cod-gray-600">
+      <h3 className="text-4xl montserrat">Galeria</h3>
+      <section className="mt-12">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex ml-4 gap-8">
+            {gallery.map((galleryItem, index) => (
+              <div
+                className="flex-[0_0_calc(100%-32px)] h-72 relative lg:flex-[0_0_calc(33%)] min-w-0"
+                key={index}
+              >
+                <button onClick={() => handleSetSearchParams(galleryItem)}>
+                  <Image
+                    fill
+                    alt="Gallery Images"
+                    src={galleryItem.poster}
+                    objectFit="contain"
+                  />
+                </button>
+              </div>
+            ))}
+          </div>
+          <div>
+            <div className="flex gap-3 mt-8 mx-auto  w-fit">
+              {scrollSnaps.map((_, index) => (
+                <DotButton
+                  key={index}
+                  onClick={() => onDotButtonClick(index)}
+                  active={index === selectedIndex}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
