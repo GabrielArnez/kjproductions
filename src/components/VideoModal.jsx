@@ -22,7 +22,7 @@ export function VideoModal() {
         closeButton: "hover:bg-white/5 active:bg-white/10 z-50",
       }}
     >
-      <ModalContent className="w-96 m-12 border-white-500 border rounded-md overflow-hidden">
+      <ModalContent className="w-96 m-10 border-white-500 border rounded-md overflow-hidden">
         <video controls preload="none" className="h-full">
           <source src={show} type="video/mp4" />
           Your browser does not support the video tag.
