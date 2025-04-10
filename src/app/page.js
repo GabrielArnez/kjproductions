@@ -92,7 +92,7 @@ export default function Home() {
               exit={{ opacity: 0 }}
               transition={{ duration: 2 }}
               alt="Imagem do que fazemos"
-              src="/what_we_do.jpg"
+              src="/what_we_do.jpeg"
               className="max-w-sm object-cover"
             />
           </div>
