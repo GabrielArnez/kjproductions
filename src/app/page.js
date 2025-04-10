@@ -10,10 +10,6 @@ import { VideoModal } from "@/components/VideoModal";
 import { Suspense } from "react";
 
 export default function Home() {
-  const OPTIONS = { slidesToScroll: 2 };
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
-
   return (
     <div
       id="#"
@@ -31,7 +27,7 @@ export default function Home() {
           className="flex justify-center mt-24"
         >
           <Image
-            alt="icone seta para baixo"
+            alt="Ícone de seta para baixo"
             src="/arrow_down_icon.svg"
             width={29}
             height={29}
@@ -45,8 +41,9 @@ export default function Home() {
               viewport={{ once: true }}
               exit={{ opacity: 0 }}
               transition={{ duration: 2 }}
-              alt="icone seta para baixo"
-              src="/image_placeholder.png"
+              alt="Imagem sobre nós"
+              src="/about_us.jpg"
+              className="max-w-sm object-cover"
             />
             <motion.div
               initial={{ translateX: -90, opacity: 0 }}
@@ -61,7 +58,9 @@ export default function Home() {
                 médicos no cenário online. Nosso foco é criar conteúdo autêntico
                 e envolvente para fortalecer a presença digital de cada médico,
                 conectando-os de maneira significativa com seus seguidores e
-                pacientes.
+                pacientes. Acreditamos no poder de histórias bem contadas e
+                estratégias personalizadas para transformar a forma como os
+                profissionais de saúde se conectam com o público.
               </p>
             </motion.div>
           </div>
@@ -79,7 +78,11 @@ export default function Home() {
               <p className="montserrat font-normal mt-8">
                 Oferecemos estratégias de engajamento e gestão completa da
                 presença digital para impulsionar o alcance e a reputação online
-                dos nossos clientes médicos.
+                dos nossos clientes médicos. Nosso trabalho vai além de simples
+                postagens: criamos campanhas impactantes, analisamos métricas
+                detalhadas e garantimos que cada ação esteja alinhada com os
+                objetivos de nossos clientes. Estamos aqui para transformar
+                desafios em oportunidades e resultados concretos.
               </p>
             </motion.div>
             <motion.img
@@ -88,8 +91,9 @@ export default function Home() {
               viewport={{ once: true }}
               exit={{ opacity: 0 }}
               transition={{ duration: 2 }}
-              alt="icone seta para baixo"
-              src="/image_placeholder.png"
+              alt="Imagem do que fazemos"
+              src="/what_we_do.jpg"
+              className="max-w-sm object-cover"
             />
           </div>
         </div>
@@ -97,7 +101,6 @@ export default function Home() {
           <Gallery />
         </div>
       </div>
-      <TestimonySection />
       <ContactSection />
       <Footer />
       <Suspense>
@@ -123,9 +126,7 @@ const BannerSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.5 }}
         className="montserrat text-4xl mt-6 lg:absolute lg:left-16 lg:bottom-20 lg:w-96 lg:mt-0"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-      </motion.p>
+      ></motion.p>
     </motion.div>
   );
 };
@@ -168,10 +169,11 @@ const ContactSection = () => {
       >
         <h3 className="montserrat text-4xl">Fale conosco</h3>
         <p className="montserrat mt-8">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-          corporis nemo, nostrum cumque velit culpa ipsam in illo consequuntur
-          sequi est similique a minus libero eaque nesciunt, explicabo magni
-          odio.
+          Estamos aqui para ajudar você a transformar sua presença digital.
+          Entre em contato conosco para saber mais sobre como podemos criar
+          estratégias personalizadas e impactantes para destacar sua marca no
+          cenário online. Nossa equipe está pronta para atender suas
+          necessidades e responder suas dúvidas.
         </p>
       </motion.div>
       <div className="flex items-center justify-between mt-20">
@@ -193,7 +195,12 @@ const ContactSection = () => {
           transition={{ duration: 2 }}
           className="shrink-0"
         >
-          <Image src="/wpp_contact_icon.svg" width="50" height="50" />
+          <a
+            href="https://api.whatsapp.com/send/?phone=5511972144773&text&type=phone_number&app_absent=0"
+            target="_blank"
+          >
+            <Image src="/wpp_contact_icon.svg" width="50" height="50" />
+          </a>
         </motion.button>
       </div>
     </div>

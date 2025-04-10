@@ -23,20 +23,27 @@ export function Footer() {
           <Image fill src="/logo.svg" alt="KJ Logo" />
         </div>
         <div className="flex flex-1 gap-5 items-center list-none mt-4 lg:mt-0 lg:place-content-end">
-          <li className="shrink-0">
+          {/* <li className="shrink-0">
             <SocialIcon src="/facebook_icon.svg" alt="Icone facebook" />
-          </li>
-          <li className="shrink-0">
+          </li> */}
+          {/* <li className="shrink-0">
             <SocialIcon src="/twitter_icon.svg" alt="Icone Twitter" />
-          </li>
+          </li> */}
           <li className="shrink-0">
-            <SocialIcon src="/insta_icon.svg" alt="Icone Instagram" />
+            <a href="https://www.instagram.com/kj.production_/" target="_blank">
+              <SocialIcon src="/insta_icon.svg" alt="Icone Instagram" />
+            </a>
           </li>
-          <li className="shrink-0">
+          {/* <li className="shrink-0">
             <SocialIcon src="/youtube_icon.svg" alt="Icone Youtube" />
-          </li>
+          </li> */}
           <li className="shrink-0">
-            <SocialIcon src="/wpp_icon.svg" alt="Icone whatsapp" />
+            <a
+              href="https://api.whatsapp.com/send/?phone=5511972144773&text&type=phone_number&app_absent=0"
+              target="_blank"
+            >
+              <SocialIcon src="/wpp_icon.svg" alt="Icone whatsapp" />
+            </a>
           </li>
         </div>
       </nav>
